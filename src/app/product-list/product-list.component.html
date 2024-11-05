@@ -1,4 +1,19 @@
-<p>name : {{ name }}</p>
-<p>price : {{ price }}</p>
-<p>color : {{ color }}</p>
-<p>discount price :</p>
+<div class="ekart--product--container">
+  <img [src]="product.pImage" />
+  <p>Name: {{ product.name }}</p>
+  <p>Price: {{ "$" + product.price }}</p>
+  <p>Color: {{ product.color }}</p>
+  <p>Discounted Price: {{ "$" + getDiscountedPrice() }}</p>
+  <p>
+    {{
+      product.inStock > 0
+        ? "Only" + product.inStock + " items left"
+        : "Not in Stock"
+    }}
+  </p>
+  <button (click)="decrementCartValue()">-</button>
+  <span>{{ addToCart }}</span>
+  <button (click)="incrementCartValue()">+</button>
+</div>
+<!-- <input (input)="onNameChange($event)"><br>
+    <p>name={{name}}</p> -->

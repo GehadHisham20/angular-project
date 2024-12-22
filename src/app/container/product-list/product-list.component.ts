@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import products from './productList';
+import { Product } from '../../Models/Product';
 
 @Component({
   selector: 'product-list',
@@ -7,22 +8,7 @@ import products from './productList';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products: {
-    id: number;
-    name: string;
-    description: string;
-    brand: string;
-    gender: string;
-    category: string;
-    size: number[];
-    color: (string | undefined)[];
-    price: number;
-    is_in_inventory: boolean;
-    items_left: number;
-    imageURL: string;
-    slug: string;
-    discountPrice?: number;
-  }[] = products;
+  products: Product[] = products;
 
   totalProductsCount = this.products.length;
   inStockProductsCount = this.products.filter((p) => !!p.is_in_inventory)
@@ -31,7 +17,11 @@ export class ProductListComponent {
     .length;
   selectedFilterBy: string = 'all';
 
+  selectedProduct: Product;
   onFilterChanged(value: string) {
     this.selectedFilterBy = value;
   }
+  //get data from container componet
+  @Input()
+  searchedText: string = '';
 }

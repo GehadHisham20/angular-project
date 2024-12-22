@@ -11,19 +11,25 @@
       <h2>{{ selectedProduct.name }}</h2>
     </div>
     <div class="ekart-product-detail-gbc">
-      <span>MEN</span>
-      <span>NIKE</span>
-      <span>SPORTS</span>
+      <span> {{ selectedProduct.gender }}</span>
+      <span> {{ selectedProduct.category }}</span>
+      <span> {{ selectedProduct.brand }}</span>
     </div>
     <div class="ekart-product-detail-price">
       <p>
         <b>Price Each Pair:</b>
         <span
-          *ngIf="selectedProduct.discountPrice"
-          style="background-color: red; color: white"
+          (ngStyle)="
+            ({
+              backgroundColor: selectedProduct.discountPrice ? 'green' : 'red',
+              color: 'white'
+            })
+          "
           ><s>${{ selectedProduct.price }}</s></span
         >
-        <span style="background-color: green; color: white"
+        <span
+          *ngIf="selectedProduct.discountPrice"
+          style="background-color: green; color: white"
           >${{ selectedProduct.discountPrice }}</span
         >
         (Inclusive of all taxes)

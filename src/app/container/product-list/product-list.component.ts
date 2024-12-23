@@ -18,6 +18,7 @@ export class ProductListComponent {
   selectedFilterBy: string = 'all';
 
   selectedProduct: Product;
+
   onFilterChanged(value: string) {
     this.selectedFilterBy = value;
   }

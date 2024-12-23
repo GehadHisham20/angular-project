@@ -9,9 +9,12 @@
 ></product-list>
 
 <!-- access selectedProduct from template ref #productListContainer -->
-<project-details
+<!-- <project-details
   *ngIf="productListContainer.selectedProduct"
   [selectedProduct]="productListContainer.selectedProduct"
+></project-details> -->
+<project-details
+  [ProductListComponentInstance]="ProductListComponentInstance"
 ></project-details>
 <!-- <input (input)="onNameChange($event)"><br>
     <p>name={{name}}</p> -->

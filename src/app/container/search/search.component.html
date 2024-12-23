@@ -1,7 +1,10 @@
 <div class="ekart--search--product">
   <!-- #searchInput is a ref of dom element -->
   <input class="ekart-search-product-input" #searchInput />
-  <button class="btn btn-search" (click)="onSearch(searchInput)">Search</button>
+  <!-- we pass the elementRef #searchInput here -->
+  <!-- <button class="btn btn-search" (click)="onSearch(searchInput)">Search</button> -->
+  <!-- incase we use a ViewChild docorator to get ref of element -->
+  <button class="btn btn-search" (click)="onSearch()">Search</button>
 </div>
 <div class="ekart-search-result-for">
   <p *ngIf="searchText"><strong>Search result for:</strong> {{ searchText }}</p>

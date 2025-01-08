@@ -16,7 +16,6 @@ export class ProjectDetailsComponent {
 
   selectedProduct: Product;
   ngOnInit() {
-    console.log('testtt', this.ProductListComponentInstance);
     this.selectedProduct = this.ProductListComponentInstance.selectedProduct;
     console.log(this.selectedProduct);
   }

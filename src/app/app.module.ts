@@ -13,6 +13,7 @@ import { ProductListComponent } from './container/product-list/product-list.comp
 import { ProductComponent } from './container/product-list/product/product.component';
 import { FilterComponent } from './container/product-list/filter/filter.component';
 import { ProjectDetailsComponent } from './container/project-details/project-details.component';
+import { FeaturedProductComponent } from './container/featured-product/featured-product.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProjectDetailsComponent } from './container/project-details/project-det
     ProductComponent,
     FilterComponent,
     ProjectDetailsComponent,
+    FeaturedProductComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

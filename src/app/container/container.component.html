@@ -14,7 +14,24 @@
   [selectedProduct]="productListContainer.selectedProduct"
 ></project-details> -->
 <project-details
+  *ngIf="productListContainer.selectedProduct"
   [ProductListComponentInstance]="ProductListComponentInstance"
 ></project-details>
-<!-- <input (input)="onNameChange($event)"><br>
-    <p>name={{name}}</p> -->
+
+<div class="ekart-featured-products">
+  <div class="ekart-featured-product-heading">
+    <h1>Latest Arrival in Pupolar Brands</h1>
+  </div>
+  <featured-product>
+    <h3 class="title">New Arrivals in Nike</h3>
+    <button class="call-to-action">New Arrival in Nike</button>
+  </featured-product>
+  <featured-product>
+    <h3 class="title">New Arrivals in Adidas</h3>
+    <button class="call-to-action">New Arrival in Adidas</button>
+  </featured-product>
+  <featured-product>
+    <h3 class="title">New Arrivals in Rebook</h3>
+    <button class="call-to-action">New Arrival in Rebook</button>
+  </featured-product>
+</div>

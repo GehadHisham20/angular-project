@@ -18,6 +18,7 @@ import { SetBackground } from './CustomDirectives/SetBackground.directive';
 import { HighlightDirective } from './CustomDirectives/highlight.directive';
 import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 import { DisableProductDirective } from './CustomDirectives/disable-product.directive';
+import { SubscribeService } from './Services/subscribe.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { DisableProductDirective } from './CustomDirectives/disable-product.dire
     DisableProductDirective,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [SubscribeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
